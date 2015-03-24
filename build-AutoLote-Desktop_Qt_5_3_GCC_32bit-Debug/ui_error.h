@@ -25,7 +25,6 @@ class Ui_Error
 public:
     QTextEdit *te_ventana_error;
     QPushButton *pushButton;
-    QTextEdit *te_ventana_error_2;
     QPushButton *pushButton_2;
 
     void setupUi(QDialog *Error)
@@ -42,11 +41,6 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(150, 220, 99, 27));
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
-        te_ventana_error_2 = new QTextEdit(Error);
-        te_ventana_error_2->setObjectName(QStringLiteral("te_ventana_error_2"));
-        te_ventana_error_2->setEnabled(true);
-        te_ventana_error_2->setGeometry(QRect(110, 140, 301, 161));
-        te_ventana_error_2->setReadOnly(true);
         pushButton_2 = new QPushButton(Error);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(210, 330, 99, 27));

@@ -25,16 +25,17 @@ Venta_moto::Venta_moto(QWidget *parent,vector<Vehiculo*>*vehiculos,vector<Vehicu
     switch(this->vehiculos->at(posvector)->GetEstado()){
         case 1:
         {
+
             ui->rb_estado_bueno_moto_venta->setChecked(true);
             ui->rb_estado_reparado_moto_venta->setChecked(false);
             ui->rb_estado_malo_moto_venta->setChecked(false);
             break;
         }
         case 2:
-        {
-            ui->rb_estado_bueno_moto_venta->setChecked(false);
-            ui->rb_estado_reparado_moto_venta->setChecked(true);
-            ui->rb_estado_malo_moto_venta->setChecked(false);
+    {
+        ui->rb_estado_bueno_moto_venta->setChecked(false);
+        ui->rb_estado_reparado_moto_venta->setChecked(true);
+        ui->rb_estado_malo_moto_venta->setChecked(false);
             break;
         }
         case 3:
