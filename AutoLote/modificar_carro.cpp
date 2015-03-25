@@ -112,7 +112,7 @@ void Modificar_carro::on_cb_modificar_carro_activated(int index)
             break;
         }
     }
-    //abilita todo los botones
+    //habilita todo los botones
     ui->dsb_carro_precio_compra_modificar->setValue(precio_compra);
     ui->dsb_carro_km_recorridos_modificar->setValue(kmrecorridos);
     ui->le_marca_carro_modificar->setEnabled(true);
