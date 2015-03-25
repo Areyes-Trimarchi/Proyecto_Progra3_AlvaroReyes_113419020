@@ -72,10 +72,10 @@ public:
     {
         if (Agregar_moto->objectName().isEmpty())
             Agregar_moto->setObjectName(QStringLiteral("Agregar_moto"));
-        Agregar_moto->resize(578, 377);
+        Agregar_moto->resize(578, 389);
         pb_agragar_moto_cancelar = new QPushButton(Agregar_moto);
         pb_agragar_moto_cancelar->setObjectName(QStringLiteral("pb_agragar_moto_cancelar"));
-        pb_agragar_moto_cancelar->setGeometry(QRect(140, 350, 99, 27));
+        pb_agragar_moto_cancelar->setGeometry(QRect(170, 350, 99, 27));
         pb_agragar_moto_cancelar->setCursor(QCursor(Qt::ClosedHandCursor));
         label_8 = new QLabel(Agregar_moto);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -136,7 +136,7 @@ public:
         rb_estado_malo_moto->setGeometry(QRect(190, 230, 61, 22));
         pb_agregar_moto_aceptar = new QPushButton(Agregar_moto);
         pb_agregar_moto_aceptar->setObjectName(QStringLiteral("pb_agregar_moto_aceptar"));
-        pb_agregar_moto_aceptar->setGeometry(QRect(290, 350, 99, 27));
+        pb_agregar_moto_aceptar->setGeometry(QRect(320, 350, 99, 27));
         pb_agregar_moto_aceptar->setCursor(QCursor(Qt::PointingHandCursor));
         le_marca_moto = new QLineEdit(Agregar_moto);
         le_marca_moto->setObjectName(QStringLiteral("le_marca_moto"));

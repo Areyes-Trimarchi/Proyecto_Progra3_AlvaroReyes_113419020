@@ -5,6 +5,7 @@
 #include "vehiculo.h"
 #include "error.h"
 #include "carro.h"
+#include "mensaje.h"
 #include <string>
 
 using std::vector;
@@ -203,6 +204,9 @@ void Modificar_carro::on_pb_modificar_carro_aceptar_clicked()
             carro->SetGastos(gastos);
         }
         vehiculos->at(posvector)=carro;
+        Mensaje mensaje(0,"La modificacion del carro se ha realizado con exito!!!");
+        mensaje.setModal(true);
+        mensaje.exec();
         this->close();
     }else{
         Error error(0,"Ocurrio un error, revise los datos que ingreso");

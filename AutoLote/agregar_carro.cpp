@@ -1,6 +1,7 @@
 #include "agregar_carro.h"
 #include "ui_agregar_carro.h"
 #include "vehiculo.h"
+#include "mensaje.h"
 #include "carro.h"
 #include "error.h"
 #include <vector>
@@ -103,6 +104,9 @@ void Agregar_carro::on_pb_agregar_carro_aceptar_clicked()
             carro->SetGastos(gastos);
         }
         vehiculos->push_back(carro);
+        Mensaje mensaje(0,"El carro fue agregado con exito con exito!!!");
+        mensaje.setModal(true);
+        mensaje.exec();
         this->close();
     }else{
         Error error(0,"Ocurrio un error, revise los datos que ingreso");

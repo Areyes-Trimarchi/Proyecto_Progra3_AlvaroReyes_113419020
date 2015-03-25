@@ -49,7 +49,7 @@ public:
 
     void retranslateUi(QDialog *Mensaje)
     {
-        Mensaje->setWindowTitle(QApplication::translate("Mensaje", "Dialog", 0));
+        Mensaje->setWindowTitle(QApplication::translate("Mensaje", "Message", 0));
         pushButton->setText(QApplication::translate("Mensaje", "Ok", 0));
     } // retranslateUi
 

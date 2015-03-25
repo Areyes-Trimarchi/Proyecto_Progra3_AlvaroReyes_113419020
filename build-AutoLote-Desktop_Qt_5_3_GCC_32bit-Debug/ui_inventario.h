@@ -33,7 +33,7 @@ public:
         if (Inventario->objectName().isEmpty())
             Inventario->setObjectName(QStringLiteral("Inventario"));
         Inventario->setEnabled(true);
-        Inventario->resize(624, 300);
+        Inventario->resize(624, 316);
         Inventario->setModal(true);
         tw_vehiculo_vendidos = new QTableWidget(Inventario);
         if (tw_vehiculo_vendidos->columnCount() < 12)

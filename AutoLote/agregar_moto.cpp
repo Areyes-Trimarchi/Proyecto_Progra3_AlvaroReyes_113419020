@@ -3,6 +3,7 @@
 #include "vehiculo.h"
 #include "moto.h"
 #include "error.h"
+#include "mensaje.h"
 #include <vector>
 #include <string>
 
@@ -195,6 +196,9 @@ void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
             moto->SetGastos_Sidecar(gastos_sidecar);
         }
         vehiculos->push_back(moto);
+        Mensaje mensaje(0,"La Moto ha sido agregada con exito!!!");
+        mensaje.setModal(true);
+        mensaje.exec();
         this->close();
     }else{
         Error error(0,"Ocurrio un errror revise los datos que esta ingresando...");

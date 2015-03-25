@@ -5,6 +5,7 @@
 #include "vehiculo.h"
 #include "error.h"
 #include "moto.h"
+#include "mensaje.h"
 #include <string>
 
 using std::vector;
@@ -284,6 +285,9 @@ void Modificar_moto::on_pb_agregar_moto_aceptar_modificar_clicked()
             moto->SetGastos_Sidecar(gastos_sidecar);
         }
         vehiculos->at(posvector)=moto;
+        Mensaje mensaje(0,"La Modificacion de la moto se ha realizado con exito!!!");
+        mensaje.setModal(true);
+        mensaje.exec();
         this->close();
     }else{
         Error error(0,"Ocurrio un errror revise los datos que esta ingresando...");

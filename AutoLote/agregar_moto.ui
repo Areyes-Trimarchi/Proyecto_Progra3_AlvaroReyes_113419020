@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>578</width>
-    <height>377</height>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pb_agragar_moto_cancelar">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>170</x>
      <y>350</y>
      <width>99</width>
      <height>27</height>
@@ -231,7 +231,7 @@
   <widget class="QPushButton" name="pb_agregar_moto_aceptar">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>320</x>
      <y>350</y>
      <width>99</width>
      <height>27</height>
