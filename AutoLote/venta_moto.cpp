@@ -19,6 +19,7 @@ Venta_moto::Venta_moto(QWidget *parent,vector<Vehiculo*>*vehiculos,vector<Vehicu
     this->vehiculos=vehiculos;
     this->vendidos=vendidos;
     this->posvector=posvector;
+    //se actualizan los campos correspondientes
     ui->le_marca_moto_venta->setText(QString(this->vehiculos->at(posvector)->GetMarca().c_str()));
     ui->le_placa_moto_venta->setText(QString(this->vehiculos->at(posvector)->GetPlaca().c_str()));
     ui->dsb_moto_precio_venta->setValue(this->vehiculos->at(posvector)->GetPrecioVenta());
@@ -82,7 +83,7 @@ Venta_moto::~Venta_moto()
 {
     delete ui;
 }
-
+//se intercambia el objeto del vector vehiculos al vector de vendidos
 void Venta_moto::on_pb_comprar_venta_moto_clicked()
 {
     vendidos->push_back(vehiculos->at(posvector));

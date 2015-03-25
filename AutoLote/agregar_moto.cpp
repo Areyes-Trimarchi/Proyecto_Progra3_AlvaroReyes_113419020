@@ -22,7 +22,7 @@ Agregar_moto::~Agregar_moto()
 {
     delete ui;
 }
-
+//Habilitar Opciones de la carretilla
 void Agregar_moto::on_rb_carretilla_si_clicked()
 {
     ui->dsb_moto_precio_compra_carretilla->setEnabled(true);
@@ -30,7 +30,7 @@ void Agregar_moto::on_rb_carretilla_si_clicked()
     ui->rb_estado_reparado_carretilla->setEnabled(true);
     ui->rb_estado_malo_carretilla->setEnabled(true);
 }
-
+//deshabilitar Opciones de la carretilla
 void Agregar_moto::on_rb_carretilla_no_clicked()
 {
     ui->dsb_moto_precio_compra_carretilla->setEnabled(false);
@@ -50,12 +50,12 @@ void Agregar_moto::on_rb_carretilla_no_clicked()
         ui->rb_estado_reparado_carretilla->setChecked(false);
     }
 }
-
+//habilitar el double spin de gastos de side car(carretilla)
 void Agregar_moto::on_rb_estado_reparado_carretilla_clicked()
 {
     ui->dsb_moto_gastos_reparacion_carretilla->setEnabled(true);
 }
-
+//deshabilitar el dbs de gastos de side car(carretilla)
 void Agregar_moto::on_rb_estado_bueno_carretilla_clicked()
 {
     ui->dsb_moto_gastos_reparacion_carretilla->setEnabled(false);
@@ -67,12 +67,12 @@ void Agregar_moto::on_rb_estado_malo_carretilla_clicked()
     ui->dsb_moto_gastos_reparacion_carretilla->setEnabled(false);
     ui->dsb_moto_gastos_reparacion_carretilla->setValue(0.00);
 }
-
+//habilitar el dbs de gastos
 void Agregar_moto::on_rb_estado_reparado_moto_clicked()
 {
     ui->dsb_moto_gastos_reparacion->setEnabled(true);
 }
-
+//deshabilitar el dbs de gastos
 void Agregar_moto::on_rb_estado_bueno_moto_clicked()
 {
     ui->dsb_moto_gastos_reparacion->setEnabled(false);
@@ -84,7 +84,7 @@ void Agregar_moto::on_rb_estado_malo_moto_clicked()
     ui->dsb_moto_gastos_reparacion->setEnabled(false);
     ui->dsb_moto_gastos_reparacion->setValue(0.00);
 }
-
+//Evento cuando se da click al boton aceptar para agregar una moto
 void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
 {
     string marca,placa;
@@ -184,6 +184,7 @@ void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
         ui->lb_error_km_moto->setText("");
     }
     if(error==0){
+        //Crear objeto moto
         Moto* moto=new Moto(2,marca,placa,estado,precio_compra,kmrecorridos,sidecar);
         moto->SetEstadoSidecar(estado_sidecar);
         if(ui->rb_carretilla_si->isChecked()){
@@ -195,12 +196,15 @@ void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
         if(ui->rb_estado_reparado_carretilla->isChecked()){
             moto->SetGastos_Sidecar(gastos_sidecar);
         }
+        //Meter el objeto dentro del vector de vehiculos si no hay errores
         vehiculos->push_back(moto);
+        //Mensaje de exito
         Mensaje mensaje(0,"La Moto ha sido agregada con exito!!!");
         mensaje.setModal(true);
         mensaje.exec();
         this->close();
     }else{
+        //Apertura Mensaje de error si existen errores
         Error error(0,"Ocurrio un errror revise los datos que esta ingresando...");
         error.setModal(true);
         error.exec();

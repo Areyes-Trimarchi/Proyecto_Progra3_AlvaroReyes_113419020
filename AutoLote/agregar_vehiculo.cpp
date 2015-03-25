@@ -26,7 +26,7 @@ void Agregar_vehiculo::on_pb_cancelar_clicked()
 {
 
 }
-
+//Evento cuando se le da click al boton para agregar carros
 void Agregar_vehiculo::on_pb_agregar_carro_clicked()
 {
     Agregar_carro agregar_carro(0,vehiculos);
@@ -34,7 +34,7 @@ void Agregar_vehiculo::on_pb_agregar_carro_clicked()
     agregar_carro.exec();
     this->close();
 }
-
+//Evento cuando se le da click al boton para agregar motos
 void Agregar_vehiculo::on_pb_agregar_moto_clicked()
 {
     Agregar_moto agregar_moto(0,vehiculos);

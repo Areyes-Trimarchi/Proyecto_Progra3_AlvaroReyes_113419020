@@ -18,11 +18,13 @@ Modificar_carro::Modificar_carro(QWidget *parent,vector<Vehiculo*>*vehiculos) :
     ui->setupUi(this);
     this->vehiculos=vehiculos;
     QStringList list;
+    //Se carga la list para meterla al combobox
     for(int i=0;i<this->vehiculos->size();i++){
         if(this->vehiculos->at(i)->GetCarrooMoto()==1){
             list.append(QString(this->vehiculos->at(i)->toString().c_str()));
         }
     }
+    //se carga el combobox
     ui->cb_modificar_carro->addItems(list);
 }
 
@@ -30,7 +32,7 @@ Modificar_carro::~Modificar_carro()
 {
     delete ui;
 }
-
+//Evalua los radiobotones y realiza las operaciones correspondientes igual que cuando se agregan carro
 void Modificar_carro::on_rb_estado_reparado_carro_modificar_clicked()
 {
     ui->dsb_carro_gastos_reparacion_modificar->setEnabled(true);
@@ -47,7 +49,7 @@ void Modificar_carro::on_rb_estado_malo_carro_modificar_clicked()
     ui->dsb_carro_gastos_reparacion_modificar->setEnabled(false);
     ui->dsb_carro_gastos_reparacion_modificar->setValue(0.00);
 }
-
+//Carga los datos a sus respectivos espacios al presionar y elegir un carro distinto
 void Modificar_carro::on_cb_modificar_carro_activated(int index)
 {
     string marca,placa;
@@ -110,10 +112,22 @@ void Modificar_carro::on_cb_modificar_carro_activated(int index)
             break;
         }
     }
+    //abilita todo los botones
     ui->dsb_carro_precio_compra_modificar->setValue(precio_compra);
     ui->dsb_carro_km_recorridos_modificar->setValue(kmrecorridos);
+    ui->le_marca_carro_modificar->setEnabled(true);
+    ui->le_placa_carro_modificar->setEnabled(true);
+    ui->pb_modificar_carro_aceptar->setEnabled(true);
+    ui->rb_estado_bueno_carro_modificar->setEnabled(true);
+    ui->rb_estado_reparado_carro_modificar->setEnabled(true);
+    ui->rb_estado_malo_carro_modificar->setEnabled(true);
+    ui->rb_tipo_camioneta_modificar->setEnabled(true);
+    ui->rb_tipo_turismo_modificar->setEnabled(true);
+    ui->rb_tipo_pickup_modificar->setEnabled(true);
+    ui->dsb_carro_km_recorridos_modificar->setEnabled(true);
+    ui->dsb_carro_precio_compra_modificar->setEnabled(true);
 }
-
+//captura los datos y los reingresa al al espacio correspondiente en el vector
 void Modificar_carro::on_pb_modificar_carro_aceptar_clicked()
 {
     int pos =ui->cb_modificar_carro->currentIndex();
@@ -199,16 +213,19 @@ void Modificar_carro::on_pb_modificar_carro_aceptar_clicked()
         ui->lb_error_km_carro->setText("");
     }
     if(error==0){
+        //si no hay errores crea un objeto carro para ingresarlo al vector
         Carro* carro=new Carro(1,marca,placa,estado,precio_compra,kmrecorridos,tipo);
         if(ui->dsb_carro_gastos_reparacion_modificar->isEnabled()){
             carro->SetGastos(gastos);
         }
         vehiculos->at(posvector)=carro;
+        //mensaje de exito
         Mensaje mensaje(0,"La modificacion del carro se ha realizado con exito!!!");
         mensaje.setModal(true);
         mensaje.exec();
         this->close();
     }else{
+        //si hay errores abre la ventana de errores
         Error error(0,"Ocurrio un error, revise los datos que ingreso");
         error.setModal(true);
         error.exec();

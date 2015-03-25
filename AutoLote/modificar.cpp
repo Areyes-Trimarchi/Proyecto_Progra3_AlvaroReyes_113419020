@@ -23,7 +23,7 @@ Modificar::~Modificar()
 {
     delete ui;
 }
-
+//Abre la ventada para modificar Carros
 void Modificar::on_pb_modificar_carro_clicked()
 {
     int cont_carros=0;
@@ -33,17 +33,19 @@ void Modificar::on_pb_modificar_carro_clicked()
         }
     }
     if(cont_carros>0){
+        //Abre la ventana de modificar carros
         Modificar_carro modif_carro(0,vehiculos);
         modif_carro.setModal(true);
         modif_carro.exec();
         this->close();
     }else{
+        //Abre ventana de Error si no hay carros
         Error error(0,"No Hay Carros");
         error.setModal(true);
         error.exec();
     }
 }
-
+//Abre la ventada para modificar Motos
 void Modificar::on_pb_modificar_moto_clicked()
 {
     int cont_motos=0;
@@ -53,11 +55,13 @@ void Modificar::on_pb_modificar_moto_clicked()
         }
     }
     if(cont_motos>0){
+        //Abrela ventana de motos
         Modificar_moto modif_moto(0,vehiculos);
         modif_moto.setModal(true);
         modif_moto.exec();
         this->close();
     }else{
+        //Abre la ventana errores si no hay motos
         Error error(0,"No Hay Motos");
         error.setModal(true);
         error.exec();

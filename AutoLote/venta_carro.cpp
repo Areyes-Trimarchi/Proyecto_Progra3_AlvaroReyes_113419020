@@ -19,6 +19,7 @@ Venta_carro::Venta_carro(QWidget *parent,vector<Vehiculo*>*vehiculos,vector<Vehi
     this->vehiculos=vehiculos;
     this->vendidos=vendidos;
     this->posvector=posvector;
+    //Se actualizan los campos correspondientes al abrirse la ventana
     ui->le_marca_carro_venta->setText(QString(this->vehiculos->at(posvector)->GetMarca().c_str()));
     ui->le_placa_carro_venta->setText(QString(this->vehiculos->at(posvector)->GetPlaca().c_str()));
     ui->dsb_carro_precio_venta->setValue(this->vehiculos->at(posvector)->GetPrecioVenta());
@@ -75,11 +76,12 @@ Venta_carro::~Venta_carro()
 {
     delete ui;
 }
-
+//El objeto pasa de estar en el vector de vehiuclos al vecotor de ventas
 void Venta_carro::on_pb_comprar_venta_carro_clicked()
 {
     vendidos->push_back(vehiculos->at(posvector));
     vehiculos->erase(vehiculos->begin()+(posvector));
+    //ventana de mensaje de exito
     Mensaje mensaje(0,"La compra se ha realizado con exito!!!");
     mensaje.setModal(true);
     mensaje.exec();

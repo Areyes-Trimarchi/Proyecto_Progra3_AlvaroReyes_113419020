@@ -18,11 +18,13 @@ Modificar_moto::Modificar_moto(QWidget *parent,vector<Vehiculo*>*vehiculos) :
     ui->setupUi(this);
     this->vehiculos=vehiculos;
     QStringList list;
+    //se crea una lista y se llena con los vehiculos existentes
     for(int i=0;i<this->vehiculos->size();i++){
         if(this->vehiculos->at(i)->GetCarrooMoto()==2){
             list.append(QString(this->vehiculos->at(i)->toString().c_str()));
         }
     }
+    //se ingresa la lista al combobox
     ui->cb_modificar_moto->addItems(list);
 }
 
@@ -30,7 +32,7 @@ Modificar_moto::~Modificar_moto()
 {
     delete ui;
 }
-
+//Evalua los radiobotones y hace las acciones correspondientes igual que en agregar moto
 void Modificar_moto::on_rb_carretilla_si_modificar_clicked()
 {
     ui->dsb_moto_precio_compra_carretilla_modificar->setEnabled(true);
@@ -92,7 +94,7 @@ void Modificar_moto::on_rb_estado_malo_moto_modificar_clicked()
     ui->dsb_moto_gastos_reparacion_modificar->setEnabled(false);
     ui->dsb_moto_gastos_reparacion_modificar->setValue(0.00);
 }
-
+//actualiza los campos al apretar el combobox
 void Modificar_moto::on_cb_modificar_moto_activated(int index)
 {
     string marca,placa;
@@ -163,8 +165,19 @@ void Modificar_moto::on_cb_modificar_moto_activated(int index)
     }
     ui->dsb_moto_precio_compra_modificar->setValue(precio_compra);
     ui->dsb_moto_km_recorridos_modificar->setValue(kmrecorridos);
+    //Habilita todo lo que se debe de habilitar
+    ui->le_marca_moto_modificar->setEnabled(true);
+    ui->le_placa_moto_modificar->setEnabled(true);
+    ui->dsb_moto_km_recorridos_modificar->setEnabled(true);
+    ui->dsb_moto_precio_compra_modificar->setEnabled(true);
+    ui->pb_agregar_moto_aceptar_modificar->setEnabled(true);
+    ui->rb_carretilla_si_modificar->setEnabled(true);
+    ui->rb_carretilla_no_modificar->setEnabled(true);
+    ui->rb_estado_bueno_moto_modificar->setEnabled(true);
+    ui->rb_estado_malo_moto_modificar->setEnabled(true);
+    ui->rb_estado_reparado_moto_modificar->setEnabled(true);
 }
-
+//Modifica la moto y la ingresa al vector correspondiente
 void Modificar_moto::on_pb_agregar_moto_aceptar_modificar_clicked()
 {
     int pos =ui->cb_modificar_moto->currentIndex();
@@ -273,6 +286,7 @@ void Modificar_moto::on_pb_agregar_moto_aceptar_modificar_clicked()
         ui->lb_error_km_moto->setText("");
     }
     if(error==0){
+        //si no hay errores crea un objeto moto y lo ingresa al vector en su posicion correspondiente
         Moto* moto=new Moto(2,marca,placa,estado,precio_compra,kmrecorridos,sidecar);
         moto->SetEstadoSidecar(estado_sidecar);
         if(ui->rb_carretilla_si_modificar->isChecked()){
@@ -285,11 +299,13 @@ void Modificar_moto::on_pb_agregar_moto_aceptar_modificar_clicked()
             moto->SetGastos_Sidecar(gastos_sidecar);
         }
         vehiculos->at(posvector)=moto;
+        //Mensaje de exito
         Mensaje mensaje(0,"La Modificacion de la moto se ha realizado con exito!!!");
         mensaje.setModal(true);
         mensaje.exec();
         this->close();
     }else{
+        //Si hay errores abre la ventana de errores
         Error error(0,"Ocurrio un errror revise los datos que esta ingresando...");
         error.setModal(true);
         error.exec();

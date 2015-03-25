@@ -25,13 +25,14 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+//Evento abrir ventana de agregar vehiculo
 void MainWindow::on_pb_agregar_vehiculo_clicked()
 {
     Agregar_vehiculo agregar_v(0,vehiculos);
     agregar_v.setModal(true);
     agregar_v.exec();
 }
+//Evento abrir ventana para modificar vehiculo
 void MainWindow::on_pb_modificar_vehiculo_clicked()
 {
     if(vehiculos->size()>0){
@@ -39,12 +40,13 @@ void MainWindow::on_pb_modificar_vehiculo_clicked()
         modificar.setModal(true);
         modificar.exec();
     }else{
+        //Abrir ventana de error
         Error error(0,"No Hay Vehiculos");
         error.setModal(true);
         error.exec();
     }
 }
-
+//Evento abrir ventana de venta
 void MainWindow::on_pb_venta_vehiculo_clicked()
 {
     if(vehiculos->size()>0){
@@ -52,12 +54,13 @@ void MainWindow::on_pb_venta_vehiculo_clicked()
         venta_vehiculo.setModal(true);
         venta_vehiculo.exec();
     }else{
+        //Abrir ventana de error
         Error error(0,"No Hay Vehiculos");
         error.setModal(true);
         error.exec();
     }
 }
-
+//Abrir ventana de inventario y vehiculos vendidos
 void MainWindow::on_pb_inventario_clicked()
 {
     if(vehiculos->size()>0||vendidos->size()>0){
@@ -66,6 +69,7 @@ void MainWindow::on_pb_inventario_clicked()
         inventario.exec();
     }
     else{
+        //Abrir ventana de error
         Error error(0,"No Hay Vehiculos");
         error.setModal(true);
         error.exec();

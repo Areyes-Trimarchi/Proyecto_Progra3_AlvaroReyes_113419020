@@ -60,7 +60,7 @@ double Moto::GetPrecio_Compra_Sidecar(){
 void Moto::SetPrecio_Compra_Sidecar(double precio_compra_sidecar){
     this->precio_compra_sidecar=precio_compra_sidecar;
 }
-
+//Metodo que devuelve el Precio de venta
 double Moto::GetPrecioVenta()const{
     if(this->GetEstado()==2){
         if(sidecar){

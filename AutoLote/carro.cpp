@@ -44,7 +44,7 @@ int Carro::GetTipo(){
 void Carro::SetTipo(int tipo){
     this->tipo=tipo;
 }
-
+//Metodo para dar el precio de venta del carro
 double Carro::GetPrecioVenta()const{
     switch(tipo){
         case 1:

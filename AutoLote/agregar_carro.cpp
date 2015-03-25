@@ -22,7 +22,7 @@ Agregar_carro::~Agregar_carro()
 {
     delete ui;
 }
-
+//Evento de boton para agregar carro
 void Agregar_carro::on_pb_agregar_carro_aceptar_clicked()
 {
     string marca,placa;
@@ -99,22 +99,25 @@ void Agregar_carro::on_pb_agregar_carro_aceptar_clicked()
         ui->lb_error_km_carro->setText("");
     }
     if(error==0){
+        //Crear un Objeto Carro si no hay errores
         Carro* carro=new Carro(1,marca,placa,estado,precio_compra,kmrecorridos,tipo);
         if(ui->dsb_carro_gastos_reparacion->isEnabled()){
             carro->SetGastos(gastos);
         }
+        //Agregar el objeto carro al vector de vehiculos si no hay errores
         vehiculos->push_back(carro);
         Mensaje mensaje(0,"El carro fue agregado con exito con exito!!!");
         mensaje.setModal(true);
         mensaje.exec();
         this->close();
     }else{
+        //abre la ventana de error
         Error error(0,"Ocurrio un error, revise los datos que ingreso");
         error.setModal(true);
         error.exec();
     }
 }
-
+//Evaluacion de los radio botones
 void Agregar_carro::on_rb_estado_reparado_carro_clicked()
 {
     ui->dsb_carro_gastos_reparacion->setEnabled(true);
@@ -131,3 +134,4 @@ void Agregar_carro::on_rb_estado_malo_carro_clicked()
     ui->dsb_carro_gastos_reparacion->setEnabled(false);
     ui->dsb_carro_gastos_reparacion->setValue(0.00);
 }
+//FIn de evaluacion de radiobotones

@@ -110,6 +110,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_estado_reparado_moto_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -126,6 +129,9 @@
    </attribute>
   </widget>
   <widget class="QLineEdit" name="le_marca_moto_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -136,6 +142,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_carretilla_si_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -152,6 +161,9 @@
    </attribute>
   </widget>
   <widget class="QRadioButton" name="rb_estado_bueno_moto_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -242,6 +254,9 @@
    </attribute>
   </widget>
   <widget class="QRadioButton" name="rb_estado_malo_moto_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -271,6 +286,9 @@
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="dsb_moto_precio_compra_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -284,6 +302,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="pb_agregar_moto_aceptar_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -300,6 +321,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_carretilla_no_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -332,6 +356,9 @@
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="dsb_moto_km_recorridos_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -425,6 +452,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="le_placa_moto_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>100</x>

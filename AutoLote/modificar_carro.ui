@@ -50,6 +50,9 @@
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="dsb_carro_km_recorridos_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -79,6 +82,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_tipo_camioneta_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -95,6 +101,9 @@
    </attribute>
   </widget>
   <widget class="QRadioButton" name="rb_tipo_pickup_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -111,6 +120,9 @@
    </attribute>
   </widget>
   <widget class="QPushButton" name="pb_modificar_carro_aceptar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -140,6 +152,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="le_placa_carro_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -150,6 +165,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_tipo_turismo_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -166,6 +184,9 @@
    </attribute>
   </widget>
   <widget class="QRadioButton" name="rb_estado_bueno_carro_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -182,6 +203,9 @@
    </attribute>
   </widget>
   <widget class="QDoubleSpinBox" name="dsb_carro_precio_compra_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -195,6 +219,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_estado_malo_carro_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -263,6 +290,9 @@
    </property>
   </widget>
   <widget class="QRadioButton" name="rb_estado_reparado_carro_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -279,6 +309,9 @@
    </attribute>
   </widget>
   <widget class="QLineEdit" name="le_marca_carro_modificar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>90</x>
