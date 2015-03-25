@@ -87,12 +87,18 @@ void Agregar_moto::on_rb_estado_malo_moto_clicked()
 void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
 {
     string marca,placa;
-    int estado,estado_sidecar;
-    double precio_compra,kmrecorridos;
+    int estado,estado_sidecar,error=0;
+    double precio_compra,precio_compra_sidecar=ui->dsb_moto_precio_compra_carretilla->value(),kmrecorridos,gastos_sidecar=ui->dsb_moto_gastos_reparacion_carretilla->value(),gastos=ui->dsb_moto_gastos_reparacion->value();
     bool sidecar;
     bool repetido=false;
     int contador_repetido=0;
     marca=QString(ui->le_marca_moto->text()).toStdString();
+    if(marca==""||marca==" "){
+        error++;
+        ui->lb_error_marca_moto->setText("!");
+    }else{
+        ui->lb_error_marca_moto->setText("");
+    }
     placa=QString(ui->le_placa_moto->text()).toStdString();
     for(int i=0;i<vehiculos->size();i++){
         if(vehiculos->at(i)->GetPlaca()==placa){
@@ -102,46 +108,97 @@ void Agregar_moto::on_pb_agregar_moto_aceptar_clicked()
     if(contador_repetido>0){
         repetido=true;
     }
-    if(repetido){
-        ui->le_placa_moto->setText("");
-        Error error(0,"Esta placa ya esta registrada eliga una nueva...");
-        error.setModal(true);
-        error.exec();
+    if(repetido||placa==""||placa==" "){
+        error++;
+        ui->lb_error_placa_moto->setText("!");
     }else{
-        if(ui->rb_carretilla_si->isChecked()){
-            sidecar=true;
-            if(ui->rb_estado_bueno_carretilla->isChecked()){
-                estado_sidecar=1;
-            }else if(ui->rb_estado_reparado_carretilla->isChecked()){
-                estado_sidecar=2;
-            }else if(ui->rb_estado_malo_carretilla->isChecked()){
-                estado_sidecar=3;
-            }
-        }else {
-            sidecar=false;
+        ui->lb_error_marca_moto->setText("");
+    }
+    if(ui->rb_carretilla_si->isChecked()){
+        sidecar=true;
+        if(precio_compra_sidecar==0.00){
+            error++;
+            ui->lb_error_precio_compra_sidecar->setText("!");
+        }else{
+            ui->lb_error_precio_compra_sidecar->setText("");
         }
-
-        if(ui->rb_estado_bueno_moto->isChecked()){
-            estado=1;
-        }else if(ui->rb_estado_reparado_moto->isChecked()){
-            estado=2;
-        }else if(ui->rb_estado_malo_moto->isChecked()){
-            estado=3;
+        ui->lb_error_sidecar->setText("");
+        if(ui->rb_estado_bueno_carretilla->isChecked()){
+            estado_sidecar=1;
+            ui->lb_error_estado_sidecar->setText("");
+        }else if(ui->rb_estado_reparado_carretilla->isChecked()){
+             estado_sidecar=2;
+             if(gastos_sidecar==0.00){
+                error++;
+                ui->lb_error_gastos_sidecar->setText("!");
+             }else{
+                ui->lb_error_gastos_sidecar->setText("");
+             }
+             ui->lb_error_estado_sidecar->setText("");
+        }else if(ui->rb_estado_malo_carretilla->isChecked()){
+             estado_sidecar=3;
+             ui->lb_error_estado_sidecar->setText("");
+        }else{
+            error++;
+            ui->lb_error_estado_sidecar->setText("!");
         }
-        precio_compra=ui->dsb_moto_precio_compra->value();
-        kmrecorridos=ui->dsb_moto_km_recorridos->value();
+    }else if(ui->rb_carretilla_no->isChecked()){
+        sidecar=false;
+        ui->lb_error_sidecar->setText("");
+    }else{
+        error++;
+        ui->lb_error_sidecar->setText("!");
+    }
+    if(ui->rb_estado_bueno_moto->isChecked()){
+        estado=1;
+        ui->lb_error_estado_moto->setText("");
+    }else if(ui->rb_estado_reparado_moto->isChecked()){
+        estado=2;
+        if(gastos==0.00){
+            error++;
+            ui->lb_error_gastos_moto->setText("!");
+        }else{
+            ui->lb_error_gastos_moto->setText("");
+        }
+        ui->lb_error_estado_moto->setText("");
+    }else if(ui->rb_estado_malo_moto->isChecked()){
+        estado=3;
+        ui->lb_error_estado_moto->setText("");
+    }else{
+        error++;
+        ui->lb_error_estado_moto->setText("!");
+    }
+    precio_compra=ui->dsb_moto_precio_compra->value();
+    if(precio_compra==0.00){
+        error++;
+        ui->lb_error_precio_compra_moto->setText("!");
+    }else{
+        ui->lb_error_precio_compra_moto->setText("");
+    }
+    kmrecorridos=ui->dsb_moto_km_recorridos->value();
+    if(kmrecorridos==0.00&&estado!=1){
+        error++;
+        ui->lb_error_km_moto->setText("!");
+    }else{
+        ui->lb_error_km_moto->setText("");
+    }
+    if(error==0){
         Moto* moto=new Moto(2,marca,placa,estado,precio_compra,kmrecorridos,sidecar);
         moto->SetEstadoSidecar(estado_sidecar);
         if(ui->rb_carretilla_si->isChecked()){
-            moto->SetPrecio_Compra_Sidecar(ui->dsb_moto_precio_compra_carretilla->value());
+            moto->SetPrecio_Compra_Sidecar(precio_compra_sidecar);
         }
         if(ui->dsb_moto_gastos_reparacion->isEnabled()){
-            moto->SetGastos(ui->dsb_moto_gastos_reparacion->value());
+            moto->SetGastos(gastos);
         }
         if(ui->rb_estado_reparado_carretilla->isChecked()){
-            moto->SetGastos_Sidecar(ui->dsb_moto_gastos_reparacion_carretilla->value());
+            moto->SetGastos_Sidecar(gastos_sidecar);
         }
         vehiculos->push_back(moto);
         this->close();
+    }else{
+        Error error(0,"Ocurrio un errror revise los datos que esta ingresando...");
+        error.setModal(true);
+        error.exec();
     }
 }

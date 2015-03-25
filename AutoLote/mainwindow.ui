@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>365</width>
-    <height>254</height>
+    <height>207</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,7 +55,7 @@
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>131</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -85,9 +85,9 @@
    <widget class="QPushButton" name="pb_venta_vehiculo">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>131</width>
+      <x>200</x>
+      <y>50</y>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -101,9 +101,9 @@
    <widget class="QPushButton" name="pb_inventario">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>170</y>
-      <width>121</width>
+      <x>200</x>
+      <y>90</y>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>

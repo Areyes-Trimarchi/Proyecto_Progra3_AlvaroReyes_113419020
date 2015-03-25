@@ -125,50 +125,88 @@ void Modificar_carro::on_pb_modificar_carro_aceptar_clicked()
         }
     }
     string marca,placa;
-    int estado,tipo;
-    double precio_compra,kmrecorridos;
+    int estado,tipo,error=0;
+    double precio_compra,kmrecorridos,gastos=ui->dsb_carro_gastos_reparacion_modificar->value();
     bool repetido=false;
     int contador_repetido=0;
     marca=QString(ui->le_marca_carro_modificar->text()).toStdString();
+    if(marca==""||marca==" "){
+        error++;
+        ui->lb_error_marca_carro->setText("!");
+    }else{
+        ui->lb_error_marca_carro->setText("");
+    }
     placa=QString(ui->le_placa_carro_modificar->text()).toStdString();
     for(int i=0;i<vehiculos->size();i++){
-        if(i!=posvector){
-            if(vehiculos->at(i)->GetPlaca()==placa){
-                contador_repetido++;
-            }
+        if(vehiculos->at(i)->GetPlaca()==placa&&i!=posvector){
+            contador_repetido++;
         }
     }
     if(contador_repetido>0){
         repetido=true;
     }
-    if(repetido){
-        ui->le_placa_carro_modificar->setText("");
-        Error error(0,"Esta placa ya esta registrada eliga una nueva...");
-        error.setModal(true);
-        error.exec();
+    if(repetido||placa==""||placa==" "){
+        error++;
+        ui->lb_error_placa_carro->setText("!");
     }else{
-        if(ui->rb_tipo_turismo_modificar->isChecked()){
-            tipo=1;
-        }else if(ui->rb_tipo_pickup_modificar->isChecked()){
-            tipo=2;
-        }else if(ui->rb_tipo_camioneta_modificar->isChecked()){
-            tipo=3;
+        ui->lb_error_placa_carro->setText("");
+    }
+    if(ui->rb_tipo_turismo_modificar->isChecked()){
+        tipo=1;
+        ui->lb_error_tipo_carro->setText("");
+    }else if(ui->rb_tipo_pickup_modificar->isChecked()){
+        tipo=2;
+        ui->lb_error_tipo_carro->setText("");
+    }else if(ui->rb_tipo_camioneta_modificar->isChecked()){
+        tipo=3;
+        ui->lb_error_tipo_carro->setText("");
+    }else{
+        error++;
+        ui->lb_error_tipo_carro->setText("!");
+    }
+    if(ui->rb_estado_bueno_carro_modificar->isChecked()){
+        estado=1;
+        ui->lb_error_estado_carro->setText("");
+    }else if(ui->rb_estado_reparado_carro_modificar->isChecked()){
+        estado=2;
+        if(gastos!=0.00){
+            ui->lb_error_gastos_carro->setText("");
+        }else{
+            error++;
+            ui->lb_error_gastos_carro->setText("!");
         }
-
-        if(ui->rb_estado_bueno_carro_modificar->isChecked()){
-            estado=1;
-        }else if(ui->rb_estado_reparado_carro_modificar->isChecked()){
-            estado=2;
-        }else if(ui->rb_estado_malo_carro_modificar->isChecked()){
-            estado=3;
-        }
-        precio_compra=ui->dsb_carro_precio_compra_modificar->value();
-        kmrecorridos=ui->dsb_carro_km_recorridos_modificar->value();
+        ui->lb_error_estado_carro->setText("");
+    }else if(ui->rb_estado_malo_carro_modificar->isChecked()){
+        estado=3;
+        ui->lb_error_estado_carro->setText("");
+    }else{
+        error++;
+        ui->lb_error_estado_carro->setText("!");
+    }
+    precio_compra=ui->dsb_carro_precio_compra_modificar->value();
+    if(precio_compra==0.00){
+        error++;
+        ui->lb_error_precio_compra_carro->setText("!");
+    }else{
+        ui->lb_error_precio_compra_carro->setText("");
+    }
+    kmrecorridos=ui->dsb_carro_km_recorridos_modificar->value();
+    if(kmrecorridos==0.00&&estado!=1){
+        error++;
+        ui->lb_error_km_carro->setText("!");
+    }else{
+        ui->lb_error_km_carro->setText("");
+    }
+    if(error==0){
         Carro* carro=new Carro(1,marca,placa,estado,precio_compra,kmrecorridos,tipo);
         if(ui->dsb_carro_gastos_reparacion_modificar->isEnabled()){
-            carro->SetGastos(ui->dsb_carro_gastos_reparacion_modificar->value());
+            carro->SetGastos(gastos);
         }
         vehiculos->at(posvector)=carro;
         this->close();
+    }else{
+        Error error(0,"Ocurrio un error, revise los datos que ingreso");
+        error.setModal(true);
+        error.exec();
     }
 }

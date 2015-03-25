@@ -58,7 +58,7 @@ void Modificar::on_pb_modificar_moto_clicked()
         modif_moto.exec();
         this->close();
     }else{
-        Error error(0,"No Hay Carros");
+        Error error(0,"No Hay Motos");
         error.setModal(true);
         error.exec();
         this->close();

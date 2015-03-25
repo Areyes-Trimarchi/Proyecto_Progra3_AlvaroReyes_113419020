@@ -43,6 +43,8 @@ public:
     QRadioButton *rb_estado_malo_carro_venta;
     QRadioButton *rb_tipo_turismo_venta;
     QLabel *label_9;
+    QButtonGroup *buttonGroup;
+    QButtonGroup *buttonGroup_2;
 
     void setupUi(QDialog *Venta_carro)
     {
@@ -50,8 +52,11 @@ public:
             Venta_carro->setObjectName(QStringLiteral("Venta_carro"));
         Venta_carro->resize(567, 269);
         rb_tipo_camioneta_venta = new QRadioButton(Venta_carro);
+        buttonGroup_2 = new QButtonGroup(Venta_carro);
+        buttonGroup_2->setObjectName(QStringLiteral("buttonGroup_2"));
+        buttonGroup_2->addButton(rb_tipo_camioneta_venta);
         rb_tipo_camioneta_venta->setObjectName(QStringLiteral("rb_tipo_camioneta_venta"));
-        rb_tipo_camioneta_venta->setEnabled(false);
+        rb_tipo_camioneta_venta->setEnabled(true);
         rb_tipo_camioneta_venta->setGeometry(QRect(170, 150, 101, 22));
         rb_tipo_camioneta_venta->setCheckable(true);
         dsb_carro_precio_venta = new QDoubleSpinBox(Venta_carro);
@@ -65,8 +70,11 @@ public:
         le_marca_carro_venta->setGeometry(QRect(90, 60, 141, 27));
         le_marca_carro_venta->setReadOnly(true);
         rb_estado_bueno_carro_venta = new QRadioButton(Venta_carro);
+        buttonGroup = new QButtonGroup(Venta_carro);
+        buttonGroup->setObjectName(QStringLiteral("buttonGroup"));
+        buttonGroup->addButton(rb_estado_bueno_carro_venta);
         rb_estado_bueno_carro_venta->setObjectName(QStringLiteral("rb_estado_bueno_carro_venta"));
-        rb_estado_bueno_carro_venta->setEnabled(false);
+        rb_estado_bueno_carro_venta->setEnabled(true);
         rb_estado_bueno_carro_venta->setGeometry(QRect(10, 210, 71, 22));
         rb_estado_bueno_carro_venta->setCheckable(true);
         pb_cancelar_venta_carro = new QPushButton(Venta_carro);
@@ -77,8 +85,9 @@ public:
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(370, 110, 111, 20));
         rb_tipo_pickup_venta = new QRadioButton(Venta_carro);
+        buttonGroup_2->addButton(rb_tipo_pickup_venta);
         rb_tipo_pickup_venta->setObjectName(QStringLiteral("rb_tipo_pickup_venta"));
-        rb_tipo_pickup_venta->setEnabled(false);
+        rb_tipo_pickup_venta->setEnabled(true);
         rb_tipo_pickup_venta->setGeometry(QRect(90, 150, 91, 22));
         rb_tipo_pickup_venta->setCheckable(true);
         label_2 = new QLabel(Venta_carro);
@@ -94,8 +103,9 @@ public:
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(80, 180, 131, 16));
         rb_estado_reparado_carro_venta = new QRadioButton(Venta_carro);
+        buttonGroup->addButton(rb_estado_reparado_carro_venta);
         rb_estado_reparado_carro_venta->setObjectName(QStringLiteral("rb_estado_reparado_carro_venta"));
-        rb_estado_reparado_carro_venta->setEnabled(false);
+        rb_estado_reparado_carro_venta->setEnabled(true);
         rb_estado_reparado_carro_venta->setGeometry(QRect(90, 210, 91, 22));
         rb_estado_reparado_carro_venta->setCheckable(true);
         label_3 = new QLabel(Venta_carro);
@@ -110,13 +120,15 @@ public:
         le_placa_carro_venta->setGeometry(QRect(90, 90, 141, 27));
         le_placa_carro_venta->setReadOnly(true);
         rb_estado_malo_carro_venta = new QRadioButton(Venta_carro);
+        buttonGroup->addButton(rb_estado_malo_carro_venta);
         rb_estado_malo_carro_venta->setObjectName(QStringLiteral("rb_estado_malo_carro_venta"));
-        rb_estado_malo_carro_venta->setEnabled(false);
+        rb_estado_malo_carro_venta->setEnabled(true);
         rb_estado_malo_carro_venta->setGeometry(QRect(190, 210, 61, 22));
         rb_estado_malo_carro_venta->setCheckable(true);
         rb_tipo_turismo_venta = new QRadioButton(Venta_carro);
+        buttonGroup_2->addButton(rb_tipo_turismo_venta);
         rb_tipo_turismo_venta->setObjectName(QStringLiteral("rb_tipo_turismo_venta"));
-        rb_tipo_turismo_venta->setEnabled(false);
+        rb_tipo_turismo_venta->setEnabled(true);
         rb_tipo_turismo_venta->setGeometry(QRect(0, 150, 81, 22));
         rb_tipo_turismo_venta->setCheckable(true);
         label_9 = new QLabel(Venta_carro);

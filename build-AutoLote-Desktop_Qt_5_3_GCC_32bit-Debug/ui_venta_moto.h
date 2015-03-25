@@ -47,8 +47,8 @@ public:
     QPushButton *pb_cancelar_venta_moto;
     QPushButton *pb_comprar_venta_moto;
     QButtonGroup *buttonGroup_2;
-    QButtonGroup *buttonGroup_3;
     QButtonGroup *buttonGroup;
+    QButtonGroup *buttonGroup_3;
 
     void setupUi(QDialog *Venta_moto)
     {
@@ -62,7 +62,7 @@ public:
         rb_carretilla_no_venta->setObjectName(QStringLiteral("rb_carretilla_no_venta"));
         rb_carretilla_no_venta->setEnabled(true);
         rb_carretilla_no_venta->setGeometry(QRect(120, 130, 71, 22));
-        rb_carretilla_no_venta->setCheckable(false);
+        rb_carretilla_no_venta->setCheckable(true);
         rb_estado_malo_carretilla_venta = new QRadioButton(Venta_moto);
         buttonGroup_2 = new QButtonGroup(Venta_moto);
         buttonGroup_2->setObjectName(QStringLiteral("buttonGroup_2"));
@@ -70,7 +70,7 @@ public:
         rb_estado_malo_carretilla_venta->setObjectName(QStringLiteral("rb_estado_malo_carretilla_venta"));
         rb_estado_malo_carretilla_venta->setEnabled(true);
         rb_estado_malo_carretilla_venta->setGeometry(QRect(190, 180, 61, 22));
-        rb_estado_malo_carretilla_venta->setCheckable(false);
+        rb_estado_malo_carretilla_venta->setCheckable(true);
         label_2 = new QLabel(Venta_moto);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 50, 67, 17));
@@ -79,7 +79,7 @@ public:
         rb_estado_bueno_carretilla_venta->setObjectName(QStringLiteral("rb_estado_bueno_carretilla_venta"));
         rb_estado_bueno_carretilla_venta->setEnabled(true);
         rb_estado_bueno_carretilla_venta->setGeometry(QRect(10, 180, 71, 22));
-        rb_estado_bueno_carretilla_venta->setCheckable(false);
+        rb_estado_bueno_carretilla_venta->setCheckable(true);
         le_marca_moto_venta = new QLineEdit(Venta_moto);
         le_marca_moto_venta->setObjectName(QStringLiteral("le_marca_moto_venta"));
         le_marca_moto_venta->setGeometry(QRect(80, 50, 141, 27));
@@ -94,19 +94,19 @@ public:
         rb_estado_bueno_moto_venta->setObjectName(QStringLiteral("rb_estado_bueno_moto_venta"));
         rb_estado_bueno_moto_venta->setEnabled(true);
         rb_estado_bueno_moto_venta->setGeometry(QRect(10, 230, 71, 22));
-        rb_estado_bueno_moto_venta->setCheckable(false);
+        rb_estado_bueno_moto_venta->setCheckable(true);
         rb_estado_malo_moto_venta = new QRadioButton(Venta_moto);
         buttonGroup_3->addButton(rb_estado_malo_moto_venta);
         rb_estado_malo_moto_venta->setObjectName(QStringLiteral("rb_estado_malo_moto_venta"));
         rb_estado_malo_moto_venta->setEnabled(true);
         rb_estado_malo_moto_venta->setGeometry(QRect(190, 230, 61, 22));
-        rb_estado_malo_moto_venta->setCheckable(false);
+        rb_estado_malo_moto_venta->setCheckable(true);
         rb_estado_reparado_moto_venta = new QRadioButton(Venta_moto);
         buttonGroup_3->addButton(rb_estado_reparado_moto_venta);
         rb_estado_reparado_moto_venta->setObjectName(QStringLiteral("rb_estado_reparado_moto_venta"));
         rb_estado_reparado_moto_venta->setEnabled(true);
         rb_estado_reparado_moto_venta->setGeometry(QRect(90, 230, 91, 22));
-        rb_estado_reparado_moto_venta->setCheckable(false);
+        rb_estado_reparado_moto_venta->setCheckable(true);
         label_9 = new QLabel(Venta_moto);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(10, 160, 241, 16));
@@ -122,7 +122,7 @@ public:
         rb_carretilla_si_venta->setObjectName(QStringLiteral("rb_carretilla_si_venta"));
         rb_carretilla_si_venta->setEnabled(true);
         rb_carretilla_si_venta->setGeometry(QRect(40, 130, 81, 22));
-        rb_carretilla_si_venta->setCheckable(false);
+        rb_carretilla_si_venta->setCheckable(true);
         label_4 = new QLabel(Venta_moto);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(10, 210, 131, 16));
@@ -131,7 +131,7 @@ public:
         rb_estado_reparado_carretilla_venta->setObjectName(QStringLiteral("rb_estado_reparado_carretilla_venta"));
         rb_estado_reparado_carretilla_venta->setEnabled(true);
         rb_estado_reparado_carretilla_venta->setGeometry(QRect(90, 180, 91, 22));
-        rb_estado_reparado_carretilla_venta->setCheckable(false);
+        rb_estado_reparado_carretilla_venta->setCheckable(true);
         label_7 = new QLabel(Venta_moto);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(10, 110, 201, 17));

@@ -60,7 +60,7 @@ void MainWindow::on_pb_venta_vehiculo_clicked()
 
 void MainWindow::on_pb_inventario_clicked()
 {
-    if(vehiculos->size()>0){
+    if(vehiculos->size()>0||vendidos->size()>0){
         Inventario inventario(0,vehiculos,vendidos);
         inventario.setModal(true);
         inventario.exec();

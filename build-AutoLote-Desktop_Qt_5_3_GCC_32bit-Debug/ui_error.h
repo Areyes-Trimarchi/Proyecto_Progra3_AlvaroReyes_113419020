@@ -31,15 +31,15 @@ public:
     {
         if (Error->objectName().isEmpty())
             Error->setObjectName(QStringLiteral("Error"));
-        Error->resize(400, 300);
+        Error->resize(239, 125);
         te_ventana_error = new QTextEdit(Error);
         te_ventana_error->setObjectName(QStringLiteral("te_ventana_error"));
         te_ventana_error->setEnabled(true);
-        te_ventana_error->setGeometry(QRect(50, 30, 301, 161));
+        te_ventana_error->setGeometry(QRect(20, 10, 201, 71));
         te_ventana_error->setReadOnly(true);
         pushButton = new QPushButton(Error);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(150, 220, 99, 27));
+        pushButton->setGeometry(QRect(70, 90, 99, 27));
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_2 = new QPushButton(Error);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));

@@ -43,7 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(365, 254);
+        MainWindow->resize(365, 207);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
@@ -60,7 +60,7 @@ public:
         label_2->setFont(font1);
         pb_agregar_vehiculo = new QPushButton(centralWidget);
         pb_agregar_vehiculo->setObjectName(QStringLiteral("pb_agregar_vehiculo"));
-        pb_agregar_vehiculo->setGeometry(QRect(20, 50, 131, 31));
+        pb_agregar_vehiculo->setGeometry(QRect(20, 50, 141, 31));
         pb_agregar_vehiculo->setCursor(QCursor(Qt::PointingHandCursor));
         pb_modificar_vehiculo = new QPushButton(centralWidget);
         pb_modificar_vehiculo->setObjectName(QStringLiteral("pb_modificar_vehiculo"));
@@ -68,11 +68,11 @@ public:
         pb_modificar_vehiculo->setCursor(QCursor(Qt::PointingHandCursor));
         pb_venta_vehiculo = new QPushButton(centralWidget);
         pb_venta_vehiculo->setObjectName(QStringLiteral("pb_venta_vehiculo"));
-        pb_venta_vehiculo->setGeometry(QRect(20, 130, 131, 31));
+        pb_venta_vehiculo->setGeometry(QRect(200, 50, 141, 31));
         pb_venta_vehiculo->setCursor(QCursor(Qt::PointingHandCursor));
         pb_inventario = new QPushButton(centralWidget);
         pb_inventario->setObjectName(QStringLiteral("pb_inventario"));
-        pb_inventario->setGeometry(QRect(20, 170, 121, 31));
+        pb_inventario->setGeometry(QRect(200, 90, 141, 31));
         pb_inventario->setCursor(QCursor(Qt::PointingHandCursor));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);

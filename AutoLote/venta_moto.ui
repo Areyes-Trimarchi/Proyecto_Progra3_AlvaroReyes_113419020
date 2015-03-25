@@ -29,7 +29,7 @@
     <string>No</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup</string>
@@ -51,7 +51,7 @@
     <string>Malo</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_2</string>
@@ -86,7 +86,7 @@
     <string>Bueno</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_2</string>
@@ -134,7 +134,7 @@
     <string>Bueno</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_3</string>
@@ -156,7 +156,7 @@
     <string>Malo</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_3</string>
@@ -178,7 +178,7 @@
     <string>Reparado</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_3</string>
@@ -239,7 +239,7 @@
     <string>Si</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup</string>
@@ -274,7 +274,7 @@
     <string>Reparado</string>
    </property>
    <property name="checkable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <attribute name="buttonGroup">
     <string notr="true">buttonGroup_2</string>
@@ -384,7 +384,7 @@
  </connections>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

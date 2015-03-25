@@ -30,15 +30,15 @@ public:
     {
         if (Mensaje->objectName().isEmpty())
             Mensaje->setObjectName(QStringLiteral("Mensaje"));
-        Mensaje->resize(400, 300);
+        Mensaje->resize(212, 141);
         te_ventana_mensaje = new QTextEdit(Mensaje);
         te_ventana_mensaje->setObjectName(QStringLiteral("te_ventana_mensaje"));
         te_ventana_mensaje->setEnabled(true);
-        te_ventana_mensaje->setGeometry(QRect(50, 30, 301, 161));
+        te_ventana_mensaje->setGeometry(QRect(10, 10, 191, 71));
         te_ventana_mensaje->setReadOnly(true);
         pushButton = new QPushButton(Mensaje);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(150, 220, 99, 27));
+        pushButton->setGeometry(QRect(50, 90, 111, 27));
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(Mensaje);

@@ -15,7 +15,7 @@
   </property>
   <widget class="QRadioButton" name="rb_tipo_camioneta_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -31,6 +31,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup_2</string>
+   </attribute>
   </widget>
   <widget class="QDoubleSpinBox" name="dsb_carro_precio_venta">
    <property name="enabled">
@@ -66,7 +69,7 @@
   </widget>
   <widget class="QRadioButton" name="rb_estado_bueno_carro_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -82,6 +85,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
   </widget>
   <widget class="QPushButton" name="pb_cancelar_venta_carro">
    <property name="geometry">
@@ -114,7 +120,7 @@
   </widget>
   <widget class="QRadioButton" name="rb_tipo_pickup_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -130,6 +136,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup_2</string>
+   </attribute>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -177,7 +186,7 @@
   </widget>
   <widget class="QRadioButton" name="rb_estado_reparado_carro_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -193,6 +202,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
@@ -238,7 +250,7 @@
   </widget>
   <widget class="QRadioButton" name="rb_estado_malo_carro_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -254,10 +266,13 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
   </widget>
   <widget class="QRadioButton" name="rb_tipo_turismo_venta">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -273,6 +288,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup_2</string>
+   </attribute>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
@@ -324,4 +342,8 @@
    </hints>
   </connection>
  </connections>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+ </buttongroups>
 </ui>
